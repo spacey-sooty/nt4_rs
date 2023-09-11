@@ -36,4 +36,3 @@ impl NTSubscription {
 }
 
 pub trait NT4 {}
-
