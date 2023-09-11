@@ -1,0 +1,11 @@
+[alias]
+b = "build"
+r = "run"
+c = "clean"
+t = "test"
+br = "build --release"
+
+[profile.release]
+lto = true
+strip = "debuginfo"
+
