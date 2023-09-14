@@ -1,5 +1,5 @@
 pub mod client {
-    struct NT4SubscriptionOptions {
+    pub struct NT4SubscriptionOptions {
         periodic_rate_seconds: f32,
         all: bool,
         topics_only: bool,
@@ -20,9 +20,25 @@ pub mod client {
                 prefix,
             }
         }
+
+        pub fn get_periodic_rate_seconds(&self) -> f32 {
+            self.periodic_rate_seconds
+        }
+
+        pub fn get_all(&self) -> bool {
+            self.all
+        }
+
+        pub fn get_topics_only(&self) -> bool {
+            self.topics_only
+        }
+
+        pub fn get_prefix(&self) -> bool {
+            self.prefix
+        }
     }
 
-    struct NT4Subscription {
+    pub struct NT4Subscription {
         topic: String,
         options: NT4SubscriptionOptions,
         uid: f32,
