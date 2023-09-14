@@ -1,4 +1,5 @@
 pub mod client {
+    #[derive(serde::Serialize, serde::Deserialize)]
     pub struct NT4SubscriptionOptions {
         periodic_rate_seconds: f32,
         all: bool,
@@ -36,8 +37,17 @@ pub mod client {
         pub fn get_prefix(&self) -> bool {
             self.prefix
         }
+
+        pub fn to_json(&self) -> serde_json::Value {
+            serde_json::to_value(self).unwrap()
+        }
+
+        pub fn from_json(json: &str) -> Self {
+            serde_json::from_str(json).unwrap()
+        }
     }
 
+    #[derive(serde::Serialize, serde::Deserialize)]
     pub struct NT4Subscription {
         topic: String,
         options: NT4SubscriptionOptions,
@@ -63,6 +73,14 @@ pub mod client {
                 options,
                 uid,
             }
+        }
+
+        pub fn from_json(json: &str) -> Self {
+            serde_json::from_str(json).unwrap()
+        }
+
+        pub fn to_json(&self) -> serde_json::Value {
+            serde_json::to_value(self).unwrap()
         }
     }
 
