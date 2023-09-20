@@ -14,6 +14,11 @@ pub mod client {
             topics_only: bool,
             prefix: bool,
         ) -> Self {
+            periodic_rate_seconds: f32,
+            all: bool,
+            topics_only: bool,
+            prefix: bool,
+        ) -> Self {
             NT4SubscriptionOptions {
                 periodic_rate_seconds,
                 all,
