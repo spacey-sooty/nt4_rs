@@ -8,7 +8,12 @@ pub mod client {
     }
 
     impl NT4SubscriptionOptions {
-        pub fn from(periodic_rate_seconds: f32, all: bool, topics_only: bool, prefix: bool) -> Self {
+        pub fn from(
+            periodic_rate_seconds: f32,
+            all: bool,
+            topics_only: bool,
+            prefix: bool,
+        ) -> Self {
             NT4SubscriptionOptions {
                 periodic_rate_seconds,
                 all,
